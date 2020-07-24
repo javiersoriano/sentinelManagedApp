@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
+    "handler": "Microsoft.Azure.CreateUIDef",
+    "version": "0.1.2-preview",
+    "parameters": {
+        "basics": [
+            {
+                "name": "workspaceName",
+                "type": "Microsoft.Common.TextBox",
+                "label": "Workspace Name",
+                "defaultValue": "",
+                "constraints": {
+                    "required": false,
+					"regex": "^[a-z0-9A-Z]{1,30}$",
+                    "validationMessage": "Only alphanumeric characters are allowed, and the value must be 1-30 characters long."
+                }
+            }
+        ],
+        "steps": [
+        ],
+        "outputs": {
+            "workspaceName": "[basics('workspaceName')]"
+        }
+    }
+}

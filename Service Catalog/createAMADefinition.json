@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "managedApplicationsRgLocation": {
+            "type": "string"
+        },
+        "managedAppDefName": {
+            "type": "string"
+        },
+        "managedAppDefDescription": {
+            "type": "string"
+        },
+        "managedAppDefDisplayName": {
+            "type": "string"
+        },
+        "managedAppDefAuthorizations": {
+            "type": "array"
+        },
+        "appPackageFileUrl": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('managedAppDefName')]",
+            "location": "[parameters('managedApplicationsRgLocation')]",
+            "type": "Microsoft.Solutions/applicationDefinitions",
+            "properties": {
+                "lockLevel": "readonly",
+                "authorizations": "[parameters('managedAppDefAuthorizations')]",
+                "description": "[parameters('managedAppDefDescription')]",
+                "displayName": "[parameters('managedAppDefDisplayName')]",
+                "packageFileUri": "[parameters('appPackageFileUrl')]",                             
+                "lockingPolicy": {
+                    "allowedActions": []
+                },
+                "notificationPolicy": {
+                    "notificationEndpoints": []
+                },
+                "deploymentPolicy": {
+                    "deploymentMode": "Complete"
+                }
+            }
+        }
+    ]
+}
