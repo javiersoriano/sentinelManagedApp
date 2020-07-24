@@ -3,7 +3,8 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "managedApplicationsRgLocation": {
-            "type": "string"
+            "type": "string",
+            "metadata": "location for the managed app resource group"
         },
         "managedAppDefName": {
             "type": "string"
