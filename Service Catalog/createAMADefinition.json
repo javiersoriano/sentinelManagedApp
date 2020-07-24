@@ -2,12 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "managedApplicationRgLocation": {
-            "type": "string",
-            "metadata": {
-                "description": "Location of the resource group and the Managed Application"
-            }
-        },
         "managedAppDefName": {
             "type": "string",
             "metadata": {
@@ -48,7 +42,7 @@
         {
             "apiVersion": "2019-07-01",
             "name": "[parameters('managedAppDefName')]",
-            "location": "[parameters('managedApplicationRgLocation')]",
+            "location": "[resourceGroup().location]",
             "type": "Microsoft.Solutions/applicationDefinitions",
             "properties": {
                 "lockLevel": "readonly",
