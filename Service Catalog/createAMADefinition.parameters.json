@@ -23,8 +23,7 @@
             ]
         },
         "appPackageFileUrl": {
-            "value": "https://github.com/javiersoriano/sentinelManagedApp/raw/master/Service%20Catalog/app.zip",
-            "metadata": {"<url to the zip file with the app definition>"}
+            "value": "https://github.com/javiersoriano/sentinelManagedApp/raw/master/Service%20Catalog/app.zip"
         }
     }
 }

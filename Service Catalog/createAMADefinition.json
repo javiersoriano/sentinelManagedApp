@@ -4,7 +4,9 @@
     "parameters": {
         "managedApplicationsRgLocation": {
             "type": "string",
-            "metadata": "location for the managed app resource group"
+            "metadata": {
+                "description": "test"
+            }
         },
         "managedAppDefName": {
             "type": "string"
@@ -16,7 +18,16 @@
             "type": "string"
         },
         "managedAppDefAuthorizations": {
-            "type": "array"
+            "type": "array",
+            "metadata": {
+                "description": "array of authorizations"
+            },
+            "defaultValue": [
+                {
+                  "principalId": "<object id of the user or group that will have access to the Managed App>",
+                  "roleDefinitionId": "<role definition ID>"
+                }
+            ]
         },
         "appPackageFileUrl": {
             "type": "string",
