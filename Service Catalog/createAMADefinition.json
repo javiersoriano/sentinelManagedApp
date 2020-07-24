@@ -2,30 +2,39 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "managedApplicationsRgLocation": {
+        "managedApplicationRgLocation": {
             "type": "string",
             "metadata": {
-                "description": "test"
+                "description": "Location of the resource group and the Managed Application"
             }
         },
         "managedAppDefName": {
-            "type": "string"
+            "type": "string",
+            "metadata": {
+                "description": "Name for the Managed Application definition"
+            }
         },
         "managedAppDefDescription": {
-            "type": "string"
+            "type": "string",
+            "metadata": {
+                "description": "Description of the Managed Application definition"
+            }
         },
         "managedAppDefDisplayName": {
-            "type": "string"
+            "type": "string",
+            "metadata": {
+                "description": "Display name of the Managed Application"
+            }
         },
         "managedAppDefAuthorizations": {
             "type": "array",
             "metadata": {
-                "description": "array of authorizations"
+                "description": "Array of authorized principal IDs that will have access to the managed resource group along with required role IDs"
             },
             "defaultValue": [
                 {
-                  "principalId": "<object id of the user or group that will have access to the Managed App>",
-                  "roleDefinitionId": "<role definition ID>"
+                  "principalId": "<Object ID of the user or group that will have access to the managed resource group>",
+                  "roleDefinitionId": "<Role definition ID>"
                 }
             ]
         },
@@ -39,7 +48,7 @@
         {
             "apiVersion": "2019-07-01",
             "name": "[parameters('managedAppDefName')]",
-            "location": "[parameters('managedApplicationsRgLocation')]",
+            "location": "[parameters('managedApplicationRgLocation')]",
             "type": "Microsoft.Solutions/applicationDefinitions",
             "properties": {
                 "lockLevel": "readonly",
