@@ -36,7 +36,7 @@
             "type": "string",
             "metadata": {
                 "description": "URL to the zip file containing the App deployment files"
-            }
+            },
             "defaultValue": "https://github.com/javiersoriano/sentinelManagedApp/raw/master/Service%20Catalog/app.zip"
         }
     },
