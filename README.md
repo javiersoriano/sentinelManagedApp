@@ -1,0 +1,1 @@
+# Azure Sentinel Managed Application
