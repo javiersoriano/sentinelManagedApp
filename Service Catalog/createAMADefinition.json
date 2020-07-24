@@ -18,7 +18,8 @@
             "type": "array"
         },
         "appPackageFileUrl": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "https://github.com/javiersoriano/sentinelManagedApp/raw/master/Service%20Catalog/app.zip"
         }
     },
     "variables": {},

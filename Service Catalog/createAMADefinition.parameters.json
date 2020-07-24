@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "managedApplicationsRgLocation": {
+            "value": "<resource location>"
+        },
+        "managedAppDefName": {
+            "value": "<Managed App definition name"
+        },
+        "managedAppDefDescription": {
+            "value": "<Managed App description"
+        },
+        "managedAppDefDisplayName": {
+            "value": "<Managed App display name"
+        },
+        "managedAppDefAuthorizations": {
+            "value": [
+                {
+                  "principalId": "<object id of the user or group that will have access to the Managed App>",
+                  "roleDefinitionId": "<role definition ID>"
+                }
+            ]
+        },
+        "appPackageFileUrl": {
+            "value": "https://github.com/javiersoriano/sentinelManagedApp/raw/master/Service%20Catalog/app.zip",
+            "metadata": {"<url to the zip file with the app definition>"}
+        }
+    }
+}
