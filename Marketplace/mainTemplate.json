@@ -52,7 +52,20 @@
                 "publisher": "Microsoft",
                 "promotionCode": ""
             }
+        },
+        { // add this resource to the resources section in the mainTemplate.json (do not add the entire file)
+            "apiVersion": "2018-02-01",
+            "name": "pid-<your-GUID>", // use your generated GUID here
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": []
         }
+    }
+} 
     ],
     "outputs": {}
 }
